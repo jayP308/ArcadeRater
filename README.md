@@ -93,11 +93,8 @@ SOFTWARE.
 * Desktop view of log in function
 <img src="./images/localhost_3001_signup.png" width="700px">
 
-* Desktop view of search result
-<img src="./images/AR search-result.png" width="700px">
-
 * Desktop view of genre and rating
-<img src="./images/localhost_3001_(1).png" width="700px">
+<img src="./images\localhost_3001_ (1).png" width="700px">
 
 # Github URL:
 https://github.com/BrianAlvarezMagana/ArcadeRaters
