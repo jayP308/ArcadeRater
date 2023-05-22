@@ -54,3 +54,31 @@
     border-top: double;
     border-bottom: double;
   }
+
+  #reviewer {
+    display: inline-block;
+    background:no-repeat;
+  }
+
+  #game-title {
+    padding: 20px;
+    text-decoration: none;
+  }
+
+  .userList {
+    padding: 20px;
+    list-style-type: none;
+    width:100%;
+    font-size: 25px;
+    text-align: center;
+  }
+
+  #card-tile {
+    width: 50%;
+    background-color: #202a444d;
+    margin: auto;
+    margin-bottom: 15px;
+    padding: 20px;
+    color: cyan;
+    border-color: #00f7ff83;
+  }

@@ -1,0 +1,20 @@
+ <link rel="stylesheet" href="./css/login.css" />
+
+<h1 style="text-align: center; color: cyan;">My Game Reviews</h1>
+<div style="text-align: center; font-size: 25px;">
+    <a href='/'style=" width: 50%; margin: auto; color: cyan; text-decoration: none; font-size: 20px; border: solid; padding: 10px; padding-left: 25px; padding-right: 25px;">Home</a>
+</div>
+<ul class="userList">
+    {{#each users}}
+        <li class="card" id="card-tile">
+            <a href="/review/{{id}}" id="game-title" aria-disabled="true" disabled>{{game_name}}⭐<a>
+             <p class="card" id="card-tile1">
+            {{#if game_name}}
+            <p id="review-tile">{{review}}</p>
+            {{/if}}
+            </p>   
+        </li>
+    {{/each}}
+</ul>
+
+<script src="./js/review.js"></script>

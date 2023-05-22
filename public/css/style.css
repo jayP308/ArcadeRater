@@ -8,6 +8,9 @@
   --error: rgb(228, 46, 1);
   --border-radius: 0.3rem;
 }
+#reviewer {
+  background-color: #6c6b67;
+}
 
 a:visited {
   color: inherit;

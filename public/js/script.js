@@ -25,7 +25,7 @@ async function topRateGames() {
             listItem.textContent = item.name + " (" + item.rating + ") " // set the name of listItem
             listItem.addEventListener("click", () => {
               // Change the current game textfield
-
+                    document.getElementById('write-review').style.display = 'block';
                     document.getElementById('gameName').innerHTML = item.name
                     document.getElementById('platform').innerHTML = item.parent_platforms[0].platform.name
                     document.getElementById('release-date').innerHTML = item.released
@@ -62,7 +62,7 @@ async function randomGames() {
             listItem.textContent = item.name + " (" + item.rating + ") " // set the name of listItem
             listItem.addEventListener("click", () => {
             // Change the current game textfield
-                  
+                  document.getElementById('write-review').style.display = 'block';
                   document.getElementById('gameName').innerHTML = item.name
                   document.getElementById('platform').innerHTML = item.parent_platforms[0].platform.name
                   document.getElementById('release-date').innerHTML = item.released
@@ -99,7 +99,7 @@ async function topMetaGames() {
           listItem.textContent = item.name + " (" + item.metacritic + ") " // set the name of listItem
           listItem.addEventListener("click", () => {
             // Change the current game textfield
-                  
+                  document.getElementById('write-review').style.display = 'block';
                   document.getElementById('gameName').innerHTML = item.name
                   document.getElementById('platform').innerHTML = item.parent_platforms[0].platform.name
                   document.getElementById('release-date').innerHTML = item.released
@@ -149,7 +149,7 @@ function generateList(data) {
       listItem.textContent = item.name // set the name of listItem
       listItem.addEventListener("click", () => {
 // Change the current game textfield
-      
+      document.getElementById('write-review').style.display = 'block';
       document.getElementById('gameName').innerHTML = item.name
       document.getElementById('platform').innerHTML = item.parent_platforms[0].platform.name
       document.getElementById('release-date').innerHTML = item.released
@@ -233,18 +233,28 @@ preSearchButton.addEventListener("click", () => {
   	})
 });
 
-// will take user to homescreen
-homeButton.addEventListener("click", () => {
-  window.history.forward();
-});
+const reviewFormHandler = async (event) => {
+  event.preventDefault();
 
-// page profile for user when click, it wont log out but still go to the next page.
-profileButton.addEventListener("click", () => {
-  window.history.forward();
-});
+  const game_name = document.getElementById('game_name').value.trim();
+  const review = document.getElementById('reviews').value.trim();
 
-// help page if user need guidance and will be taken to a separate page
-helpButton.addEventListener("click", () => {
-  // need code here
-});
+  if (game_name && review) {
+    const response = await fetch('/api/users/reviews', {
+      method: 'POST',
+      body: JSON.stringify({ game_name, review }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    if (response.ok) {
+      alert("Review Submitted");
+      document.location.replace('/')
+    } else {
+      alert("Cannot Be Empty");
+      return;
+    }
+  }
+}
+
+document.querySelector('.review-form').addEventListener('submit', reviewFormHandler);
 

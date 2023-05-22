@@ -12,6 +12,7 @@
                     <div class="dropdown-menu outline-info mr-sm-2" aria-labelledby="dropdownMenu2">
                       <p class="dropdown-item" id="welcome-tag">{{loggedIn.username}}</p>
                       <a class="dropdown-item" href="/" id="home-button">Home</a>
+                       <a class="dropdown-item" href="/reviews"id="my-reviews">My Reviews</a>
                       <a class="dropdown-item" id="logout">Log Out</a>
                     </div>
                   </div>
@@ -74,52 +75,31 @@
 
                 </div>
             
-            
-            </div>
-            <div class="pt-3">
+           </div>
+            <div class="pt-3" id="write-review" style="display: none;">
                 <div class="card border-info text-info">
-                    <div id="gameName1" class="card-header " style="background: linear-gradient(#8b9ac0, rgb(206, 199, 190)); text-align:center;">Reviews</div>
+                    <div id="gameName1" class="card-header " style="background: linear-gradient(#8b9ac0, rgb(206, 199, 190)); text-align:center;">Create a Review!</div>
                     <!-- interior card displayer -->
                     <div class="p-4 card-group row">
                         <!-- cards -->
-                        <div id="card1" class="card card-body border-info text-info">
-                           <div style="display: flex; gap: 1rem; align-items: center"><p id="rating" type="text" class="card-text">Rating:</p><div ></div></div>
-                            <p id="comment" class="card-text">Comment:</p>
-                            <p id="datePosted" class="card-text">DatePosted</p>
-                        </div>
-    
-                        <div id="card1" class="card card-body border-info text-info">
-                           <div style="display: flex; gap: 1rem; align-items: center"><p  id="rating" type="text" class="card-text">Rating:</p><div id="ratingText"></div></div>
-                            <p id="comment" class="card-text">Review:</p>
-                            <p id="datePosted" class="card-text">DatePosted</p>
-                        </div>
-    
-                        <div id="card1" class="card card-body border-info text-info">
-                           <div style="display: flex; gap: 1rem; align-items: center"><p id="rating" type="text" class="card-text">Rating:</p><div id="ratingText"></div></div>
-                            <p id="comment" class="card-text">Review:</p>
-                            <p id="datePosted" class="card-text">DatePosted</p>
-                        </div>
-    
-                        <div id="card1" class="card card-body border-info text-info">
-                           <div style="display: flex; gap: 1rem; align-items: center"><p id="rating" type="text" class="card-text">Rating:</p><div id="ratingText"></div></div>
-                            <p id="comment" class="card-text">Review:</p>
-                            <p id="datePosted" class="card-text">DatePosted</p>
-                        </div>
-    
-                        <div id="card1" class="card card-body border-info text-info">
-                           <div style="display: flex; gap: 1rem; align-items: center"><p id="rating" type="text" class="card-text">Rating:</p><div id="ratingText"></div></div>
-                            <p id="comment" class="card-text">Review:</p>
-                            <p id="datePosted" class="card-text">DatePosted</p>
-                        </div>
+                         <form class="review-form" style="margin-bottom: 20px;">
+                        <p>Game Title</p>
+                        <input type="text" name="game_name" id="game_name" style="margin-bottom: 15px;">
+
+                        <p>Write your review here....</p>
+                        <input type="text" name="reviews" id="reviews" style="width: 100%; padding-bottom: 50%; margin-bottom: 15px; overflow:hidden">
+
+                        <button  type="submit">submit</button>
+                    </form>
+
                     </div>
                     <!-- interior card displayer -->
                 </div>
             </div>
         </div>
-        <!-- Game container -->
-
-
-</div>
-    </div>
+        
+            </div>
+        </div>
 
     <script type="text/javascript" src="./js/script.js"></script>
+    

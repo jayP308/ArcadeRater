@@ -22,6 +22,7 @@ const loginFormHandler = async (event) => {
         timer: 2000,
       }).then ((result) => {
         document.location.replace('/');
+        document.getElementById('write-review').style.display = "block";
       })
     } else {
       Swal.fire({

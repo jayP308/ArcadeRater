@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Gallery, Painting, User} = require('../models');
+const { Gallery, Painting, User, Reviews} = require('../models');
 
 // GET all galleries for homepage
 router.get('/', async (req, res) => {
@@ -26,23 +26,37 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/users', async (req, res) => {
+
+router.get('/reviews', async (req, res) => {
   try {
-      const usersData = await User.findAll();
+      const usersReviewData = await Reviews.findAll();
 
-      const users = usersData.map(user => user.get({ plain: true }));
+      const users = usersReviewData.map(review => review.get({ plain: true }));
 
-      console.log(users, 'Line 12');
-
-      res.render('users', {
+      res.render('reviews', {
           users,
-          loggedIn: req.session.user || null,
+          loggedIn: req.session.users || null
       });
   } catch(error) {
       res.status(500).json({ error });
   };
 });
 
+router.get('/reviews/:userId', async (req, res) => {
+  try{ 
+      const { userId } = req.params;
+
+      const userData = await Reviews.findByPk(userId);
+
+      const user = userData.get({ plain: true });
+
+      res.render('painting-details', {
+          user
+      });
+  } catch (error) {
+      res.status(500).json({error});
+  }
+});
 // Login route
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
@@ -58,6 +72,14 @@ router.get('/signup', (req, res) => {
     return;
   }
   res.render('signup');
+});
+
+router.get('/reviews', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+  res.render('reviews');
 });
 
 module.exports = router;

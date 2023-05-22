@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Reviews } = require('../../models');
 
 // CREATE new user
 router.post('/signup', async (req, res) => {
@@ -52,6 +52,25 @@ router.post('/login', async (req, res) => {
       res
         .status(200)
         .json({ user: dbUserData, message: 'You are now logged in!' });
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.post('/reviews', async (req, res) => {
+  try {
+    const dbReviewData = await Reviews.create({
+      game_name: req.body.game_name,
+      review: req.body.review,
+     
+    });
+
+    req.session.save(() => {
+      req.session.loggedIn = true;
+
+      res.status(200).json(dbReviewData);
     });
   } catch (err) {
     console.log(err);
