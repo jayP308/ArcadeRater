@@ -247,11 +247,27 @@ const reviewFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      alert("Review Submitted");
-      document.location.replace('/')
+      Swal.fire({
+        title: `<h3 style="color: #00FFFF;">Review Submitted Successfully</h3>`,
+        icon: "success",
+        text: " ",
+        background: "#202A44",
+        showConfirmButton: false,
+        timer: 2000,
+      }).then ((result) => {
+        document.location.replace('/');
+      })
     } else {
-      alert("Cannot Be Empty");
-      return;
+      Swal.fire({
+        title: `<h3 style="color: #00FFFF;">Cannot Be Blank!</h3>`,
+        icon: "error",
+        text: " ",
+        background: "#202A44",
+        showConfirmButton: false,
+        timer: 3000,
+      }).then ((result) => {
+        return;
+      })
     }
   }
 }

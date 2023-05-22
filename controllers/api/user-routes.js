@@ -68,7 +68,7 @@ router.post('/reviews', async (req, res) => {
     });
 
     req.session.save(() => {
-      req.session.loggedIn = true;
+      req.session.loggedInReviews = true;
 
       res.status(200).json(dbReviewData);
     });

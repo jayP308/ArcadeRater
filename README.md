@@ -27,6 +27,13 @@ Serverside API
 Node.js
 Express.js
 MySQL
+Sequelize
+Handlebars
+Express-Handlebars
+Express-Session
+Luxon
+bcrypt
+sweetAlerts2
  
 ## Contributors
 Junnel R. Padilla, Bryan Magana Alvarez, James Hernandez, Abdolkarim Karimi, Yung in Shin
@@ -57,43 +64,40 @@ SOFTWARE.
 ## Contacts
 * Name: Junnel R. Padilla
 * Github: https://github.com/jayP308
-* Email: 
+ 
 
 * Name: Bryan Magana Alvarez
-* Github: https://github.com/
-* Email: 
+* Github: https://github.com/BrianAlvarezMagana
+
 
 * Name: James Hernandez
-* Github: https://github.com/
-* Email: 
+* Github: https://github.com/swimjames
+
 
 * Name: Abdolkarim Karimi
-* Github: https://github.com/
-* Email: 
+* Github: https://github.com/mackarimi
+
 
 * Name: Yung in Shin
 * Github: https://github.com/yung-shin
-* Email: ineeus2@gmail.com
+
 
 ## Screenshots
 
 * Desktop view of front page
-<img src="./images/AR front page.png" width="700px">
+<img src="./images/localhost_3001_.png" width="700px">
 
 * Desktop view of sign up function
-<img src="./images/AR sign up.png" width="700px">
+<img src="./images/localhost_3001_login.png" width="700px">
 
 * Desktop view of log in function
-<img src="./images/AR login.png" width="700px">
+<img src="./images/localhost_3001_signup.png" width="700px">
 
 * Desktop view of search result
 <img src="./images/AR search-result.png" width="700px">
 
 * Desktop view of genre and rating
-<img src="./images/AR genre-rating.png" width="700px">
-
-* Desktop view of button function
-<img src="./images/AR button function.png" width="700px">
+<img src="./images/localhost_3001_(1).png" width="700px">
 
 # Github URL:
 https://github.com/BrianAlvarezMagana/ArcadeRaters

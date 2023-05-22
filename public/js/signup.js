@@ -29,6 +29,7 @@ const signupFormHandler = async (event) => {
             text: " ",
             background: "#202A44",
             showConfirmButton: false,
+            timer: 2000,
           }).then ((result) => {
             return;
           })

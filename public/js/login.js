@@ -5,6 +5,19 @@ const loginFormHandler = async (event) => {
   const username = document.querySelector('#username-login').value.trim();
   const password = document.querySelector('#password-login').value.trim();
 
+  if(!username || !password) {
+    Swal.fire({
+      title: `<h3 style="color: #00FFFF;">Cannot Be Blank!</h3>`,
+      icon: "error",
+      text: " ",
+      background: "#202A44",
+      showConfirmButton: false,
+      timer: 2000,
+    }).then ((result) => {
+      return;
+    })
+  }
+
   if (username && password) {
     const response = await fetch('/api/users/login', {
       method: 'POST',
@@ -31,6 +44,7 @@ const loginFormHandler = async (event) => {
         text: " ",
         background: "#202A44",
         showConfirmButton: false,
+        timer: 1500,
       }).then ((result) => {
         return;
       })
