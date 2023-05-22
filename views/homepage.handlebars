@@ -1,0 +1,125 @@
+ <link rel="stylesheet" href="./css/login.css" />
+
+ <header style="background-color: transparent;">
+     <nav class="navbar navbar-expand-lg p-3">
+        <a class="navbar-brand text-info title-page" style="font-family: monospace; font-size: 40px; "href="/">Arcade Raters</a>
+        <img src="./images/download.png" width="30" height="30" alt="8bit Gold Coin">
+        <div class="ms-auto">
+            <form class="form-inline my-2 my-lg-4">
+              {{#if loggedIn}}
+              <div class="dropdown">
+                    <a class="btn btn-outline-info mr-sm-2 dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome {{username}}</a>
+                    <div class="dropdown-menu outline-info mr-sm-2" aria-labelledby="dropdownMenu2">
+                      <p class="dropdown-item" id="welcome-tag">{{loggedIn.username}}</p>
+                      <a class="dropdown-item" href="/" id="home-button">Home</a>
+                      <a class="dropdown-item" id="logout">Log Out</a>
+                    </div>
+                  </div>
+                </div>
+              {{else}}
+              <a href="/login" class="btn btn-outline-info mr-sm-2" type="button" id="login-button" style="padding: 10px 50px 10px 50px; font-size: 25px;">Login</a>
+              {{/if}}
+
+              {{#if loggedIn}}
+              
+              {{else}}
+              <a href="/signup" class="btn btn-outline-info mr-sm-2" type="button" id="signup-button" style="padding: 10px 50px 10px 50px; font-size: 25px;">Sign Up</a>
+              {{/if}}
+            </form>
+        </div>
+    </nav>
+  </header>
+  
+    <div class="mainBody container-fluid p-3">
+
+        <!-- Search container -->
+        <div class="row container-fluid ">
+            <div class="col-6 container-fluid">
+                <div class="card border-info mb-3 w3-container w3-center w3-animate-right" style="background: linear-gradient(#6177ad, rgb(206, 199, 190));">
+                    <div class="input-group p-3" >
+                        <button class="btn btn-info input-group-text" type="button" id="searchBtn">Search Game</button>
+                        <input id="gameInput" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+                    </div>
+                </div>
+                    <!-- Search container -->
+            <div class="card border-info mb-3 w3-container w3-center w3-animate-right" style="background: linear-gradient(#6177ad, rgb(206, 199, 190));">
+                    <div class="d-flex justify-content-between p-3" >
+                        <button class="btn btn-primary" type="button" id="topRatedBtn">Top Rated Games</button>
+                        <button class="btn btn-danger" type="button" id="randomGameBtn">Random Games</button>
+                        <button class="btn btn-success" type="button" id="prevSearchBtn">Previously Searched Games</button>
+                        <button class="btn btn-warning" type="button" id="topMetaBtn">Top Metacritic Score Games</button>
+                    </div>
+                </div>
+            </div>
+            <div id="games-list" class="mb-3 text-info p-3"></div>
+<!-- image -->
+<div class="text-center w3-container w3-center w3-animate-left">
+    <img src="../images/SNES-controller.png" alt="SNES Controller" class="img-fluid" id="image-games" />
+</div>
+<!-- image -->
+                    <!-- Buttons container --
+        <!-- Buttons container -->
+    
+        <!-- Game container -->
+        <div class="col-6 container-fluid">
+            <div id="result-list" class="mb-3 text-info p-3"></div>
+            <div class="card border-info">
+                <div class="card-header border-info " id="gameName" style="background: linear-gradient(#8b9ac0, rgb(206, 199, 190)); text-align:center;">Current Game</div>
+                <div class="card-body text-info" style="background-color: #1c2947; text-align: center;">
+
+                    <div style="display: flex; gap: 1rem; align-items: center"><h5 type="text" class="d-inline card-title">Avalaible Platforms:</h5><div id="platform"></div></div>
+                    <div style="display: flex; gap: 1rem; align-items: center"><h5 type="text" class="d-inline card-title">Release Date:</h5><div id="release-date"></div></div>
+                    <div style="display: flex; gap: 1rem; align-items: center"><h5 type="text" class="d-inline card-title">Genre:</h5><div id="genre"></div></div>
+                    <div style="display: flex; gap: 1rem; align-items: center"><p id="rating" type="text" class="card-text">Rating:</p><div ></div></div>
+
+                </div>
+            
+            
+            </div>
+            <div class="pt-3">
+                <div class="card border-info text-info">
+                    <div id="gameName1" class="card-header " style="background: linear-gradient(#8b9ac0, rgb(206, 199, 190)); text-align:center;">Reviews</div>
+                    <!-- interior card displayer -->
+                    <div class="p-4 card-group row">
+                        <!-- cards -->
+                        <div id="card1" class="card card-body border-info text-info">
+                           <div style="display: flex; gap: 1rem; align-items: center"><p id="rating" type="text" class="card-text">Rating:</p><div ></div></div>
+                            <p id="comment" class="card-text">Comment:</p>
+                            <p id="datePosted" class="card-text">DatePosted</p>
+                        </div>
+    
+                        <div id="card1" class="card card-body border-info text-info">
+                           <div style="display: flex; gap: 1rem; align-items: center"><p  id="rating" type="text" class="card-text">Rating:</p><div id="ratingText"></div></div>
+                            <p id="comment" class="card-text">Review:</p>
+                            <p id="datePosted" class="card-text">DatePosted</p>
+                        </div>
+    
+                        <div id="card1" class="card card-body border-info text-info">
+                           <div style="display: flex; gap: 1rem; align-items: center"><p id="rating" type="text" class="card-text">Rating:</p><div id="ratingText"></div></div>
+                            <p id="comment" class="card-text">Review:</p>
+                            <p id="datePosted" class="card-text">DatePosted</p>
+                        </div>
+    
+                        <div id="card1" class="card card-body border-info text-info">
+                           <div style="display: flex; gap: 1rem; align-items: center"><p id="rating" type="text" class="card-text">Rating:</p><div id="ratingText"></div></div>
+                            <p id="comment" class="card-text">Review:</p>
+                            <p id="datePosted" class="card-text">DatePosted</p>
+                        </div>
+    
+                        <div id="card1" class="card card-body border-info text-info">
+                           <div style="display: flex; gap: 1rem; align-items: center"><p id="rating" type="text" class="card-text">Rating:</p><div id="ratingText"></div></div>
+                            <p id="comment" class="card-text">Review:</p>
+                            <p id="datePosted" class="card-text">DatePosted</p>
+                        </div>
+                    </div>
+                    <!-- interior card displayer -->
+                </div>
+            </div>
+        </div>
+        <!-- Game container -->
+
+
+</div>
+    </div>
+
+    <script type="text/javascript" src="./js/script.js"></script>
