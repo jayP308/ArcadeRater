@@ -97,6 +97,7 @@ SOFTWARE.
 <img src="./images\localhost_3001_ (1).png" width="700px">
 
 # Github URL:
-https://github.com/BrianAlvarezMagana/ArcadeRaters
+https://github.com/jayP308/ArcadeRater.git
 
 # Deployed Live URL: 
+https://gameraters.herokuapp.com/
